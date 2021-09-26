@@ -2,8 +2,8 @@ from datetime import date
 
 
 class Birthday:
-    def __init__(self, birthday_person: str, _date: date):
+    def __init__(self, birthday_person: str, date_: date):
         self.birthday_person = birthday_person
-        self._date = _date
+        self.date_ = date_
 
 # TODO validate
