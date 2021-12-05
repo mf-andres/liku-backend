@@ -8,8 +8,8 @@ from tests.liku_backend.utils import gift_mother
 
 def test_calls_gifts_repository():
     gift_repository = Mock()
-    gift_repository.update = Mock()
+    gift_repository.update_as_gifted = Mock()
     gifted_gift_marker = GiftedGiftMarker(gift_repository)
-    gift = gift_mother.get_gift()
-    gifted_gift_marker.invoke(gift)
-    gift_repository.update.assert_called_once_with(gift)
+    gift_id = "gift_id"
+    gifted_gift_marker.invoke(gift_id)
+    gift_repository.update_as_gifted.assert_called_once_with(gift_id)

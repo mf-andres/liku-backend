@@ -22,5 +22,9 @@ class GiftRepository(abc.ABC):
         pass
 
     @abc.abstractmethod
+    def update_as_gifted(self, gift_id: str):
+        pass
+
+    @abc.abstractmethod
     def remove_dangling(self, user_id, birthday_id):
         pass
