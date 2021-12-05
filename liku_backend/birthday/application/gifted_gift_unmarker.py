@@ -3,10 +3,10 @@ from liku_backend.birthday.domain.gift_repository import GiftRepository
 
 
 # TODO it only takes the gift id
-class GiftedGiftMarker:
+class GiftedGiftUnmarker:
     def __init__(self, gift_repository: GiftRepository):
         self.gift_repository = gift_repository
 
     def invoke(self, gift: Gift):
-        gift.gifted = True
+        gift.gifted = False
         self.gift_repository.update(gift)
