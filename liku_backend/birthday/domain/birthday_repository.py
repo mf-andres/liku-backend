@@ -11,3 +11,7 @@ class BirthdayRepository(abc.ABC):
     @abc.abstractmethod
     def update(self, birthday: Birthday):
         pass
+
+    @abc.abstractmethod
+    def remove(self, birthday_id: str):
+        pass
