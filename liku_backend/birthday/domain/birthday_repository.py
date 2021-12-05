@@ -7,3 +7,7 @@ class BirthdayRepository(abc.ABC):
     @abc.abstractmethod
     def store(self, birthday: Birthday):
         pass
+
+    @abc.abstractmethod
+    def update(self, birthday: Birthday):
+        pass
