@@ -20,3 +20,7 @@ class GiftRepository(abc.ABC):
     @abc.abstractmethod
     def retrieve(self, user_id: str, birthday_id: str, gifted: bool) -> List[Gift]:
         pass
+
+    @abc.abstractmethod
+    def remove_dangling(self, user_id, birthday_id):
+        pass
