@@ -1,0 +1,2 @@
+class BirthdayDatabaseNotFoundError(Exception):
+    pass
