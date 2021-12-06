@@ -39,9 +39,8 @@ class MongoGiftRepository(MongoRepository, GiftRepository):
         self.collection.update_one(query, update)
 
     def remove(self, gift_id: str):
-        # query = {"id_": gift_id}
-        # self.collection.delete_one(query)
-        pass
+        query = {"id_": gift_id}
+        self.collection.delete_one(query)
 
     def retrieve(self, user_id: str, birthday_id: str, gifted: bool) -> List[Gift]:
         query = {"user_id": user_id, "birthday_id": birthday_id, "gifted": gifted}
