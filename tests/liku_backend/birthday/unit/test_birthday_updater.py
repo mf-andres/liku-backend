@@ -1,7 +1,7 @@
 from unittest.mock import Mock
 
 from liku_backend.birthday.application.birthday_updater import BirthdayUpdater
-from tests.liku_backend.utils import birthday_mother
+from tests.liku_backend.birthday.utils import birthday_mother
 
 
 def test_calls_birthday_repository():

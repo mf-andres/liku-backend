@@ -1,7 +1,7 @@
 from unittest.mock import Mock
 
 from liku_backend.gift.application.gift_creator import GiftCreator
-from tests.liku_backend.utils import gift_mother
+from tests.liku_backend.gift.utils import gift_mother
 
 
 def test_calls_gifts_repository():
