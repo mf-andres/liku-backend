@@ -30,16 +30,13 @@ class MongoGiftRepository(MongoRepository, GiftRepository):
         self.collection.insert_one(gift_as_dict)
 
     def update(self, gift: Gift):
-        # query = {"id_": gift.id_}
-        # gift_as_dict = gift_to_mongo_object_converter.invoke(gift)
-        # update = {
-        #     "$set": {
-        #         "gift_person": gift_as_dict["gift_person"],
-        #         "date_": gift_as_dict["date_"],
-        #     }
-        # }
-        # self.collection.update_one(query, update)
-        pass
+        query = {"id_": gift.id_}
+        update = {
+            "$set": {
+                "description": gift.description,
+            }
+        }
+        self.collection.update_one(query, update)
 
     def remove(self, gift_id: str):
         # query = {"id_": gift_id}
