@@ -1,7 +1,7 @@
 from liku_backend.birthday.domain.birthday_repository import BirthdayRepository
 
 
-class BirthdayRemover:
+class BirthdayRetriever:
     def __init__(self, birthday_repository: BirthdayRepository):
         self.birthday_repository = birthday_repository
 

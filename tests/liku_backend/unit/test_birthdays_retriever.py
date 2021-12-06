@@ -1,6 +1,6 @@
 from unittest.mock import Mock
 
-from liku_backend.birthday.application.birthday_remover import BirthdayRetriever
+from liku_backend.birthday.application.birthday_retriever import BirthdayRetriever
 
 
 def test_calls_birthday_repository():
