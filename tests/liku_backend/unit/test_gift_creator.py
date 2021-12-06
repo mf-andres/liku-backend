@@ -1,6 +1,6 @@
 from unittest.mock import Mock
 
-from liku_backend.birthday.application.gift_creator import GiftCreator
+from liku_backend.gift.application.gift_creator import GiftCreator
 from tests.liku_backend.utils import gift_mother
 
 

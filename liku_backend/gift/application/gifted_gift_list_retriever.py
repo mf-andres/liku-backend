@@ -1,5 +1,4 @@
-from liku_backend.birthday.domain.gift import Gift
-from liku_backend.birthday.domain.gift_repository import GiftRepository
+from liku_backend.gift.domain.gift_repository import GiftRepository
 
 
 class GiftedGiftListRetriever:

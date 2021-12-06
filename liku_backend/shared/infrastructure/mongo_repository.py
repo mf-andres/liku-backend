@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
-from liku_backend.birthday.infrastructure.errors import DatabaseNotFoundError
+from liku_backend.birthday.infrastructure.errors import BirthdayDatabaseNotFoundError
 
 
 class MongoRepository:
@@ -30,5 +30,5 @@ class MongoRepository:
             self.database = self.database_connection[self.database_name]
             self.collection = self.database[self.collection_name]
         except Exception:
-            raise DatabaseNotFoundError(f"Unable to connect to database at host={self.host}, port ={self.port}")
+            raise BirthdayDatabaseNotFoundError(f"Unable to connect to database at host={self.host}, port ={self.port}")
 

@@ -1,10 +1,6 @@
 from unittest.mock import Mock
 
-from liku_backend.birthday.application.gift_creator import GiftCreator
-from liku_backend.birthday.application.gift_updater import GiftUpdater
-from liku_backend.birthday.application.gifted_gift_marker import GiftedGiftMarker
-from liku_backend.birthday.application.gifted_gift_unmarker import GiftedGiftUnmarker
-from tests.liku_backend.utils import gift_mother
+from liku_backend.gift.application.gifted_gift_unmarker import GiftedGiftUnmarker
 
 
 def test_calls_gifts_repository():

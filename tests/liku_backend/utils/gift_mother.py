@@ -1,4 +1,4 @@
-from liku_backend.birthday.domain.gift import Gift
+from liku_backend.gift.domain.gift import Gift
 
 
 def get_gift():

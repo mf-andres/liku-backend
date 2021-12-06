@@ -1,6 +1,6 @@
 from unittest.mock import Mock
 
-from liku_backend.birthday.application.gift_list_retriever import GiftListRetriever
+from liku_backend.gift.application.gift_list_retriever import GiftListRetriever
 
 
 def test_calls_gifts_repository():

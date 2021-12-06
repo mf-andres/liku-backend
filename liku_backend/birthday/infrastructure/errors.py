@@ -1,2 +1,2 @@
-class DatabaseNotFoundError(Exception):
+class BirthdayDatabaseNotFoundError(Exception):
     pass

@@ -1,6 +1,6 @@
 from unittest.mock import Mock
 
-from liku_backend.birthday.application.dangling_gifts_remover import DanglingGiftsRemover
+from liku_backend.gift.application.dangling_gifts_remover import DanglingGiftsRemover
 
 
 def test_calls_gifts_repository():

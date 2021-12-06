@@ -3,7 +3,7 @@ from typing import List
 from liku_backend.birthday.domain.birthday import Birthday
 from liku_backend.birthday.domain.birthday_repository import BirthdayRepository
 from liku_backend.birthday.infrastructure import birthday_to_mongo_object_converter, mongo_object_to_birthday_converter
-from liku_backend.birthday.infrastructure.mongo_repository import MongoRepository
+from liku_backend.shared.infrastructure.mongo_repository import MongoRepository
 
 
 class MongoBirthdayRepository(MongoRepository, BirthdayRepository):
