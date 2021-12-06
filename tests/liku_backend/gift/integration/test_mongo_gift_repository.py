@@ -44,3 +44,14 @@ def test_updates_one_gifted_gift_as_not_gifted(mongo_gift_repository_setup_and_t
     mongo_gift_repository.update_as_not_gifted(gifted_gift.id_)
     gifted_gifts = mongo_gift_repository.retrieve(gifted_gift.user_id, gifted_gift.birthday_id, gifted=True)
     assert len(gifted_gifts) == 0
+
+
+def test_removes_dangling_gifts(mongo_gift_repository_setup_and_teardown):
+    mongo_gift_repository = mongo_gift_repository_setup_and_teardown
+    gift = gift_mother.get_gift()
+    mongo_gift_repository.store(gift)
+    mongo_gift_repository.store(gift)
+    mongo_gift_repository.store(gift)
+    mongo_gift_repository.remove_dangling(gift.user_id, gift.birthday_id)
+    gifts = mongo_gift_repository.retrieve(gift.user_id, gift.birthday_id, gifted=False)
+    assert len(gifts) == 0

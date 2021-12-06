@@ -67,8 +67,9 @@ class MongoGiftRepository(MongoRepository, GiftRepository):
         }
         self.collection.update_one(query, update)
 
-    def remove_dangling(self, user_id, gift_id):
-        pass
+    def remove_dangling(self, user_id, birthday_id):
+        query = {"user_id": user_id, "birthday_id": birthday_id}
+        self.collection.delete_many(query)
 
     def empty(self):
         self.collection.delete_many({})
