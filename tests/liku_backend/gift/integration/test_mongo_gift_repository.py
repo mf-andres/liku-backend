@@ -35,3 +35,12 @@ def test_updates_one_gift_as_gifted(mongo_gift_repository_setup_and_teardown):
     mongo_gift_repository.update_as_gifted(gift.id_)
     gifts = mongo_gift_repository.retrieve(gift.user_id, gift.birthday_id, gifted=True)
     assert len(gifts) == 1
+
+
+def test_updates_one_gifted_gift_as_not_gifted(mongo_gift_repository_setup_and_teardown):
+    mongo_gift_repository = mongo_gift_repository_setup_and_teardown
+    gifted_gift = gift_mother.get_gifted_gift()
+    mongo_gift_repository.store(gifted_gift)
+    mongo_gift_repository.update_as_not_gifted(gifted_gift.id_)
+    gifted_gifts = mongo_gift_repository.retrieve(gifted_gift.user_id, gifted_gift.birthday_id, gifted=True)
+    assert len(gifted_gifts) == 0

@@ -9,3 +9,9 @@ def get_gift():
     description = "description"
     birthday = Gift(id_, user_id, birthday_id, gifted, description)
     return birthday
+
+
+def get_gifted_gift():
+    gift = get_gift()
+    gift.gifted = True
+    return gift

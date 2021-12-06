@@ -59,7 +59,13 @@ class MongoGiftRepository(MongoRepository, GiftRepository):
         self.collection.update_one(query, update)
 
     def update_as_not_gifted(self, gift_id: str):
-        pass
+        query = {"id_": gift_id}
+        update = {
+            "$set": {
+                "gifted": False,
+            }
+        }
+        self.collection.update_one(query, update)
 
     def remove_dangling(self, user_id, gift_id):
         pass
