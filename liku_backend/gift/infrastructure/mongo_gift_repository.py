@@ -50,7 +50,13 @@ class MongoGiftRepository(MongoRepository, GiftRepository):
         return gifts
 
     def update_as_gifted(self, gift_id: str):
-        pass
+        query = {"id_": gift_id}
+        update = {
+            "$set": {
+                "gifted": True,
+            }
+        }
+        self.collection.update_one(query, update)
 
     def update_as_not_gifted(self, gift_id: str):
         pass
