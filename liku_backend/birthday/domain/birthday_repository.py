@@ -1,4 +1,5 @@
 import abc
+from typing import List
 
 from liku_backend.birthday.domain.birthday import Birthday
 
@@ -17,5 +18,5 @@ class BirthdayRepository(abc.ABC):
         pass
 
     @abc.abstractmethod
-    def retrieve(self, user_id: str) -> Birthday:
+    def retrieve(self, user_id: str) -> List[Birthday]:
         pass

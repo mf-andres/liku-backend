@@ -10,10 +10,12 @@ def convert_many(birthdays_as_dict: List[dict]) -> List[Birthday]:
 
 def convert(birthday_as_dict: dict) -> Birthday:
     return Birthday(
+        birthday_as_dict["id_"],
+        birthday_as_dict["user_id"],
         birthday_as_dict["birthday_person"],
-        convert_datetime_to_day(birthday_as_dict["date_"])
+        convert_datetime_to_date(birthday_as_dict["date_"])
     )
 
 
-def convert_datetime_to_day(datetime_: datetime) -> date:
+def convert_datetime_to_date(datetime_: datetime) -> date:
     return date(datetime_.year, datetime_.month, datetime_.day)
