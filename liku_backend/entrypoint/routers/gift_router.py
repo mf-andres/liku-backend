@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, Query
 
 from liku_backend.entrypoint.items.gift_item import GiftItem
 from liku_backend.gift.application.gift_creator import GiftCreator
@@ -40,7 +40,7 @@ def put(request: Request, gift: GiftItem):
     status_code=200,
     response_model=None,
 )
-def delete(request: Request, gift_id: str):
+def delete(request: Request, gift_id: str = Query(..., alias="giftId")):
     gift_repository = request.app.gift_repository
     gift_remover = GiftRemover(gift_repository)
     gift_remover.invoke(gift_id)
@@ -51,7 +51,7 @@ def delete(request: Request, gift_id: str):
     status_code=200,
     response_model=None,
 )
-def mark_as_gifted(request: Request, gift_id: str):
+def mark_as_gifted(request: Request, gift_id: str = Query(..., alias="giftId")):
     gift_repository = request.app.gift_repository
     gifted_gift_marker = GiftedGiftMarker(gift_repository)
     gifted_gift_marker.invoke(gift_id)
@@ -62,7 +62,7 @@ def mark_as_gifted(request: Request, gift_id: str):
     status_code=200,
     response_model=None,
 )
-def unmark_as_gifted(request: Request, gift_id: str):
+def unmark_as_gifted(request: Request, gift_id: str = Query(..., alias="giftId")):
     gift_repository = request.app.gift_repository
     gifted_gift_unmarker = GiftedGiftUnmarker(gift_repository)
     gifted_gift_unmarker.invoke(gift_id)

@@ -1,5 +1,13 @@
 version: '3'
 services:
+  liku_backend:
+    container_name: liku_backend
+    image: liku-backend:latest
+    ports:
+      - 8000:8000
+    networks:
+      - liku_network
+
   liku_mongodb:
     container_name: liku_mongodb
     image: mongo

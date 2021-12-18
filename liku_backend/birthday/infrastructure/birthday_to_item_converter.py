@@ -10,8 +10,8 @@ def convert_many(birthdays: List[Birthday]) -> List[BirthdayItem]:
 
 def convert(birthday: Birthday) -> BirthdayItem:
     return BirthdayItem(
-        id_=birthday.id_,
-        user_id=birthday.user_id,
-        birthday_person=birthday.birthday_person,
-        date_=birthday.date_,
+        id=birthday.id_,
+        userId=birthday.user_id,
+        birthdayPerson=birthday.birthday_person,
+        date=birthday.date_,
     )

@@ -6,4 +6,4 @@ class BirthdayRetriever:
         self.birthday_repository = birthday_repository
 
     def invoke(self, user_id: str):
-        self.birthday_repository.retrieve(user_id)
+        return self.birthday_repository.retrieve(user_id)

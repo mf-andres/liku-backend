@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, Query
 
 from liku_backend.birthday.application.birthday_creator import BirthdayCreator
 from liku_backend.birthday.application.birthday_remover import BirthdayRemover
@@ -38,7 +38,7 @@ def put(request: Request, birthday: BirthdayItem):
     status_code=200,
     response_model=None,
 )
-def post(request: Request, birthday_id: str):
+def post(request: Request, birthday_id: str = Query(..., alias="userId")):
     birthday_repository = request.app.birthday_repository
     birthday_remover = BirthdayRemover(birthday_repository)
     birthday_remover.invoke(birthday_id)

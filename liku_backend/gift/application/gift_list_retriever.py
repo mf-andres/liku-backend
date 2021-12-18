@@ -6,4 +6,4 @@ class GiftListRetriever:
         self.gift_repository = gift_repository
 
     def invoke(self, user_id: str, birthday_id: str):
-        self.gift_repository.retrieve(user_id, birthday_id, gifted=False)
+        return self.gift_repository.retrieve(user_id, birthday_id, gifted=False)

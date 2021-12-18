@@ -1,10 +1,11 @@
 from datetime import date
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class BirthdayItem(BaseModel):
-    id_: str
-    user_id: str
-    birthday_person: str
-    date_: date
+    id_: str = Field(..., alias="id")
+    user_id: str = Field(..., alias="userId")
+    birthday_person: str = Field(..., alias="birthdayPerson")
+    date_: date = Field(..., alias="date")
+
