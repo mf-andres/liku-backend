@@ -10,7 +10,7 @@ router = APIRouter()
 
 
 @router.get(
-    "/ungifted-gifts",
+    "/gifted-gifts",
     status_code=200,
     response_model=List[GiftItem],
 )
