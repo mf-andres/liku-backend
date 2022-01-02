@@ -1,10 +1,13 @@
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
-from liku_backend.birthday.infrastructure.mongo_birthday_repository import MongoBirthdayRepository
+from liku_backend.birthday.infrastructure import birthday_repository_factory
 from liku_backend.entrypoint.routers import birthday_router, birthdays_router, gift_router, gifts_router, \
     gifted_gifts_router
+from liku_backend.gift.infrastructure import gift_repository_factory
 from liku_backend.gift.infrastructure.mongo_gift_repository import MongoGiftRepository
+from liku_backend.shared.infrastructure.settings import Settings
 
 app = FastAPI(
     title="Liku Backend",
@@ -12,13 +15,10 @@ app = FastAPI(
 
 
 def inject_dependencies():
-    app.birthday_repository = MongoBirthdayRepository(
-        host="localhost",
-        port=27017,
-        user="root",
-        password="root",
-        database_name="liku"
-    )
+    load_dotenv()
+    settings = Settings()
+    app.birthday_repository = birthday_repository_factory.get_repository(settings)
+    app.gift_repository = gift_repository_factory.get_repository(settings)
     app.gift_repository = MongoGiftRepository(
         host="localhost",
         port=27017,
