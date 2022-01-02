@@ -18,7 +18,7 @@ class AtlasBirthdayRepository(BirthdayRepository):
         self.password = password
         self.host = f"mongodb+srv://liku:{self.password}@cluster0.oib15.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
         self.database_name = database_name
-        self.collection_name = "gifts"
+        self.collection_name = "birthdays"
         self._connect()
 
     def _connect(self):
