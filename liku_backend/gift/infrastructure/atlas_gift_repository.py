@@ -12,8 +12,8 @@ from liku_backend.shared.infrastructure.mongo_repository import MongoRepository
 class AtlasGiftRepository(GiftRepository):
     def __init__(
             self,
-            password=str,
-            database_name=str,
+            password: str,
+            database_name: str,
     ):
         self.password = password
         self.host = f"mongodb+srv://liku:{self.password}@cluster0.oib15.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"

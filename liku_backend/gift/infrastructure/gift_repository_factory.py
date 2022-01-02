@@ -14,6 +14,7 @@ def get_repository(settings: Settings):
         )
     if settings.gift_repository_type == "atlas":
         return AtlasGiftRepository(
-            password=settings.gift_repository_password,
+            settings.gift_repository_password,
+            settings.gift_repository_database_name,
         )
     raise NotImplemented("wrong repository type")
