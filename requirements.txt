@@ -7,3 +7,4 @@ fastapi~=0.70.0
 starlette~=0.16.0
 pydantic~=1.8.2
 python-dotenv==0.19.2
+dnspython==1.16.0
