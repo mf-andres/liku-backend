@@ -19,13 +19,6 @@ def inject_dependencies():
     settings = Settings()
     app.birthday_repository = birthday_repository_factory.get_repository(settings)
     app.gift_repository = gift_repository_factory.get_repository(settings)
-    app.gift_repository = MongoGiftRepository(
-        host="localhost",
-        port=27017,
-        user="root",
-        password="root",
-        database_name="liku"
-    )
 
 
 def include_routers():
