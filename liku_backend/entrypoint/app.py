@@ -6,7 +6,6 @@ from liku_backend.birthday.infrastructure import birthday_repository_factory
 from liku_backend.entrypoint.routers import birthday_router, birthdays_router, gift_router, gifts_router, \
     gifted_gifts_router
 from liku_backend.gift.infrastructure import gift_repository_factory
-from liku_backend.gift.infrastructure.mongo_gift_repository import MongoGiftRepository
 from liku_backend.shared.infrastructure.settings import Settings
 
 app = FastAPI(
@@ -30,7 +29,7 @@ def include_routers():
 
 
 def configure_cors():
-    origins = ["http://localhost:4200"]
+    origins = ["http://localhost:4200", "https://liku-4363f.web.app"]
     app.add_middleware(
         CORSMiddleware, allow_origins=origins, allow_credentials=True, allow_methods=["*"], allow_headers=["*"]
     )
